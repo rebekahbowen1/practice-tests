@@ -1,0 +1,59 @@
+package samplePackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import com.thoughtworks.selenium.Wait;
+
+public class UserRegistration {
+
+	FirefoxDriver wd = new FirefoxDriver ();
+	String baseURL="http://www.notonthehighstreet.com/christmas";
+	WebDriverWait wait = new WebDriverWait(wd,5);
+	
+	
+	@Test
+	public void test () {
+	//add a product to the basket (product page)
+	wd.get(baseURL);
+	wd.findElementByLinkText("Fairy Light Heart Wreath").click();
+	wd.findElementByXPath(("//input[starts-with(@id,'safe_place_for_courier')]")).sendKeys("home");  //use when there are dynamic elements on the page
+	wd.findElementByXPath("//*[@id='add_to_cart']").click();
+
+	WebElement checkoutmodal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shopping_buttons']/a[2]")));
+	checkoutmodal.click();
+	
+	//proceed to checkout
+	wd.findElementByXPath(".//*[@id='edit_cart']/section[2]/div/div[2]/span/button").click();
+		
+	//welcome page
+	WebElement signinemail = wd.findElementByXPath("//*[@id='email']");
+	if (signinemail.isEnabled() ) 
+		signinemail.sendKeys("testuser@user.com");
+	
+	WebElement signinpassword = wd.findElementByXPath("//*[@id='password']");
+	if (signinpassword.isEnabled() ) 
+		signinpassword.sendKeys("logmein1");
+
+	
+	}
+
+
+	}
+		
+	
+	
+	
+	
+
+	
+
+
+
+	
+	

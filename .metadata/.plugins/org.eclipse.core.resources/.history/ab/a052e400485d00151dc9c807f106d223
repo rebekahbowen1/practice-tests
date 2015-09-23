@@ -1,0 +1,31 @@
+package samplePackage;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class UserRegistration {
+
+	FirefoxDriver wd = new FirefoxDriver ();
+	String baseURL="http://www.notonthehighstreet.com/christmas";
+	
+	@Test
+	public void test () {
+		//add a product to the basket
+	wd.get(baseURL);
+	wd.findElementByLinkText("Personalised Wooden Name Bauble").click();
+	Select(wd.findElementById("name_e_g_matilda_write_exactly_as_you_wish_it_to_appear_10_characters_maximum_6cf2791575666120395105d1b6990c8b04b356f0")).selectByVisibleText("3 day delivery (+ £3.00)");
+	wd.findElementByXPath("//*[@id='add_to_cart']").click();
+
+	}}
+		
+	
+	
+	
+	
+
+	
+
+
+
+	
+	
