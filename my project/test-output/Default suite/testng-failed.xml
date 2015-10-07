@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="samplePackage.UserRegistration">
+      <class name="samplePackage.AccessMyWishList">
         <methods>
           <include name="test"/>
         </methods>
-      </class> <!-- samplePackage.UserRegistration -->
+      </class> <!-- samplePackage.AccessMyWishList -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
