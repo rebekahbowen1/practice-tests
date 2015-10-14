@@ -1,0 +1,61 @@
+package samplePackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import com.thoughtworks.selenium.Wait;
+import org.openqa.selenium.support.ui.Select;
+
+public class AddItemToWishList {
+
+	FirefoxDriver wd = new FirefoxDriver ();
+	String baseURL="http://www.public.integration.qa.noths.com/planttheatre/product/cocktail-garden-kit-six-varieties-to-grow";
+	WebDriverWait wait = new WebDriverWait(wd,5);
+	
+			
+	@Test
+	public void test () throws InterruptedException {
+	//visiting the product page
+	wd.get(baseURL);
+	
+	//entering required information/options
+	
+	Select select = new Select(wd.findElement(By.id("line_item_options_attributes_1_product_option_value_id_currency_GBP")));
+	select.selectByVisibleText("Gift Wrap, no thank you");
+	Thread.sleep(4000);
+	
+	//save for later
+	wd.findElementById("save_for_later").click();
+	Thread.sleep(2000);
+	
+	//add to wedding list
+	wd.findElementById("modal_add_to_wish_list").click();
+	
+	//signing in
+	wd.findElementById("email").sendKeys("admin@notonthehighstreet.com");
+	wd.findElementById("password").sendKeys("logmein1");
+	wd.findElementById("button_existing_customer").click();
+	
+	
+	if(wd.getTitle().contains("overview of my list"))
+	    //Pass
+	    System.out.println("Test has Passed");
+	else
+	    //Fail
+	    System.out.println("Test has failed");
+	
+	
+	wd.close();	
+		}
+
+
+	}
+
+
+		

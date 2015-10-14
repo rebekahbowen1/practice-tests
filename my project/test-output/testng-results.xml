@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14093" started-at="2015-10-07T14:15:20Z" finished-at="2015-10-07T14:15:34Z">
+  <suite name="Default suite" duration-ms="14479" started-at="2015-10-14T13:32:04Z" finished-at="2015-10-14T13:32:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14093" started-at="2015-10-07T14:15:20Z" finished-at="2015-10-07T14:15:34Z">
-      <class name="samplePackage.AccessMyWishList">
-        <test-method status="PASS" signature="test()[pri:0, instance:samplePackage.AccessMyWishList@8462f31]" name="test" duration-ms="14062" started-at="2015-10-07T15:15:20Z" finished-at="2015-10-07T15:15:34Z">
+    <test name="Default test" duration-ms="14479" started-at="2015-10-14T13:32:04Z" finished-at="2015-10-14T13:32:18Z">
+      <class name="samplePackage.AddItemToWishList">
+        <test-method status="PASS" signature="test()[pri:0, instance:samplePackage.AddItemToWishList@7674f035]" name="test" duration-ms="14462" started-at="2015-10-14T14:32:04Z" finished-at="2015-10-14T14:32:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-      </class> <!-- samplePackage.AccessMyWishList -->
+      </class> <!-- samplePackage.AddItemToWishList -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
